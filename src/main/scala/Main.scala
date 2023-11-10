@@ -14,7 +14,7 @@ import com.bot4s.telegram.api.declarative._
 
 // Это пример бота
 
-object Test extends TelegramBot with App with Commands[Future] {
+object Test extends TelegramBot with App with Commands[Future]  with Polling {
   implicit val backend: SttpBackend[Future, Any] = OkHttpFutureBackend()   //хз что это такое
   override val client: RequestHandler[Future] = new FutureSttpClient("token")
 
